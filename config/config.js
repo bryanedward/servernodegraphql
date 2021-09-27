@@ -7,11 +7,7 @@ const client = new Client({
     user: process.env.User,
     host: process.env.Host,
     database: process.env.Database,
-    password: process.env.Password,
-    port: 5432,
-    ssl: {
-        rejectUnauthorized: true
-    }
+    password: process.env.Password
 });
 
 
