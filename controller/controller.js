@@ -1,4 +1,4 @@
-const pool = require('../config/config')
+const pool = require('../config/config.js')
 
 var ciudades = () => {
     //obtener todas la ciudades
