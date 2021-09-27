@@ -16,5 +16,5 @@ app.use('/graphql', graphqlHTTP({
 }))
 
 app.listen(process.env.port || 2000, function () {
-    console.log('ook');
+    console.log('connect');
 })
