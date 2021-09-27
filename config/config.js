@@ -10,7 +10,7 @@ const client = new Client({
     password: process.env.Password,
     port: 5432,
     ssl: {
-        rejectUnauthorized: false
+        rejectUnauthorized: true
     }
 });
 
