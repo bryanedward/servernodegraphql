@@ -1,14 +1,27 @@
-const { Client } = require('pg');
+const { Client, Pool } = require('pg');
 
 const dotenv = require('dotenv')
 dotenv.config()
 
-const client = new Client({
-    user: process.env.User,
-    host: process.env.Host,
-    database: process.env.Database,
-    password: process.env.Password
-});
+const connectionString = process.env.DATABASE_URL
+
+var client
+if(process.env.Deploy ==="true"){
+    client = new Pool({
+        connectionString,
+        ssl: {
+            rejectUnauthorized: false
+        }
+    })
+}else{
+    client = new Pool({
+        connectionString
+    })
+}
+
+
+
+
 
 
 async function connectpg() {
